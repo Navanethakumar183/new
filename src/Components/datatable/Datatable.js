@@ -3,6 +3,9 @@ import { DataGrid } from "@mui/x-data-grid";
 import { userColumns, userRows } from "../../datatablesource";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import React from "react";
+import "antd/dist/antd.css";
+import { Breadcrumb, Menu } from "antd";
 
 const Datatable = () => {
   const [data, setData] = useState(userRows);
@@ -35,6 +38,14 @@ const Datatable = () => {
   ];
   return (
     <div className="datatable">
+      <Breadcrumb>
+          <Breadcrumb.Item>
+            <a href="http://localhost:3000/">Component</a>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item>
+            <a href="http://localhost:3000/products">General</a>
+          </Breadcrumb.Item>
+        </Breadcrumb>
       <div className="datatableTitle">
         Add New User
         <Link to="/users/new" className="link">
